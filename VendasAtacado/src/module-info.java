@@ -1,0 +1,3 @@
+module VendasAtacado {
+	requires Fila;
+}
