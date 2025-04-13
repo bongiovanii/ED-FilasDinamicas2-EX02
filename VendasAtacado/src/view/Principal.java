@@ -3,12 +3,14 @@ package view;
 import java.util.Random;
 
 import br.edu.fatec.bongiovani.Fila;
+import controller.OperacaoController;
 import model.Cliente;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		Fila<Cliente> fClientes = new Fila<>();
+		OperacaoController opr = new OperacaoController();
 		Cliente cliente = new Cliente();
 		Random rand = new Random();
 		int min = 20;
@@ -19,7 +21,7 @@ public class Principal {
 		String clientes = "";
 		
 		for(int i = 0; i < 20; i++) {
-			clientes = "Clientes" + i;
+			clientes = "Cliente " + i;
 			int qntdPecas = rand.nextInt((max - min)+1) + min;
 			float valorPecas = rand.nextInt((maxPValue - minPValue)+1) + minPValue;
 	
@@ -28,6 +30,7 @@ public class Principal {
 			fClientes.insert(cliente);
 		}
 		
+		opr.caixa(fClientes);
 		
 
 	}
